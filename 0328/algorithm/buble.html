@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+	let count = 0;
+    let array = [1, 10, 4, 3, 5]
+    let len = array.length;
+    let isSwap = null
+    for(var i=len; i>0; --i){//outer
+        console.log(i)
+        isSwap =false
+        for(var j=0; j<i-1; ++j){//inner
+            if(array[j] > array[j+1]){
+                let temp = array[j] // 큰수
+                array[j] = array[j+1];
+                array[j+1] = temp;
+                ++count
+                isSwap = true
+            }
+        }
+        if(!isSwap) break;
+    }
+    console.log('결과'+array)
+    console.log('결과'+count)
+</script>
+</html>

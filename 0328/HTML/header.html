@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @font-face {
+    font-family: 'HSGyoulnoonkot';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSGyoulnoonkot.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+        *{
+            font-family: 'HSGyoulnoonkot';
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --text-color: #f0f4f5;
+            --background-color: #263343;
+            --accent-color: #d49466;
+        }
+        a{
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between; 
+            background-color: var(--background-color);
+            padding: 8px 12px;
+        }
+        .navbar_logo{
+            font-size: 24px;
+            color: var(--text-color);
+        }
+        .navbar_logo i{
+            color: var(--accent-color);
+        }
+        .navbar_menu{
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+        }
+        .navbar_menu li{
+            padding: 8px 12px;
+        }
+        .navbar_menu li:hover{
+            background-color: var(--accent-color);
+            border-radius: 4px ;
+        }
+        .navbar_icons{
+            list-style: none;
+            color: var(--text-color);
+            padding-left: 0;
+            display: flex;
+        }
+        .navbar_icons li{
+            padding: 8px 12px;
+        }
+        .navbar_togglebtn{
+            position: absolute;
+            right: 32px;
+            font-size: 24px;
+            display: none;
+            color: var(--accent-color);
+        }
+        @media screen and (max-width:768px){
+            .navbar {
+                flex-direction: column;
+            }
+            .navbar_menu{
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                display: none;
+            }
+            .navbar_menu li{
+                width: 100%;
+                text-align: center;
+            }
+            .navbar_icons{
+                justify-content: center;
+                display: none;
+                width: 100%;
+            }
+            .navbar_togglebtn{
+                display: block;
+            }
+            .navbar_menu.active,
+            .navbar_icons.active{
+                display: flex;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/7f3a427fdf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar_logo">
+                <i class="fa-brands fa-accusoft"></i>
+                <a href="">DreamCoding</a>
+            </div>
+            <ul class="navbar_menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Wedding</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Booking</a></li>
+            </ul>
+            <ul class="navbar_icons">
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-facebook-f"></i></li>
+            </ul>
+            <a href="#" class="navbar_togglebtn"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </div>
+    <script>
+        const togglebtn = document.querySelector('.navbar_togglebtn')
+        const menu = document.querySelector('.navbar_menu')
+        const icons = document.querySelector('.navbar_icons')
+        togglebtn.addEventListener('click',()=>{
+            menu.classList.toggle('active');
+            icons.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>
