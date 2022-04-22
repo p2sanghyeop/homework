@@ -49,7 +49,7 @@ on d.device_uuid = ci.device_uuid
 select count(*)
 from car_event_log
 where car_number = "359서 9096"
-and (create_at between "2022-04-11" and "2022-04-13")
+and create_at between "2022-04-11" and "2022-04-13"
 group by event_type 
 
 8번
